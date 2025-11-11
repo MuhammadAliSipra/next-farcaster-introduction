@@ -18,6 +18,10 @@ Farcaster Mini Apps are web applications that run inside the Farcaster social ne
 - Basic knowledge of Next.js
 - A Next.js application (can be existing or new)
 - Your app needs to be deployed (Vercel, Railway, etc.)
+- Node.js 18+ installed
+- A code editor (VS Code recommended)
+
+📖 Documentation: https://miniapps.farcaster.xyz/ (Navigate to Introduction → Getting Started)
 
 ---
 
@@ -83,7 +87,7 @@ The `accountAssociation` field is used to verify your domain ownership. For test
 - `splashBackgroundColor` - Hex color for the loading screen background (optional)
 - `webhookUrl` - Endpoint for receiving notifications (optional, omitted above)
 
-📖 More info: https://miniapps.farcaster.xyz/
+📖 Docs: https://miniapps.farcaster.xyz/ (See Reference section for full manifest details and Guides → Manifest vs Embed Guide)
 
 ---
 
@@ -161,7 +165,7 @@ export default function Home() {
 }
 ```
 
-📖 Learn more: https://miniapps.farcaster.xyz/
+📖 Docs: https://miniapps.farcaster.xyz/ (Navigate to SDK → Context and Guides → Loading your app)
 
 ---
 
@@ -234,6 +238,8 @@ export default function Home() {
 }
 ```
 
+📖 Docs: https://miniapps.farcaster.xyz/ (See SDK → Mini app detection)
+
 ---
 
 ### 4. Key Features You Can Use
@@ -246,6 +252,8 @@ console.log(user.username); // User's username
 console.log(user.displayName); // User's display name
 console.log(user.pfpUrl); // Profile picture URL
 ```
+
+📖 Docs: https://miniapps.farcaster.xyz/ (See SDK → Context and Guides → Authenticating users)
 
 #### **Open Ethereum Wallet**
 ```typescript
@@ -261,11 +269,15 @@ const result = await sdk.wallet.ethProvider.request({
 });
 ```
 
+📖 Docs: https://miniapps.farcaster.xyz/ (See Guides → Interacting with Ethereum wallets and SDK → Ethereum wallet)
+
 #### **Share Your App**
 ```typescript
 // Let users share your app with their followers
 sdk.actions.openUrl('https://warpcast.com/~/compose?text=Check%20out%20this%20app!%20https://yourapp.com');
 ```
+
+📖 Docs: https://miniapps.farcaster.xyz/ (See Guides → Sharing your app)
 
 #### **Trigger Haptics (Vibration)**
 ```typescript
@@ -274,11 +286,15 @@ sdk.actions.haptics('impact_light');
 // Options: 'impact_light', 'impact_medium', 'impact_heavy', 'success', 'warning', 'error'
 ```
 
+📖 Docs: https://miniapps.farcaster.xyz/ (See SDK → Haptics)
+
 #### **Close the Mini App**
 ```typescript
 // Close your app programmatically
 sdk.actions.close();
 ```
+
+📖 Docs: https://miniapps.farcaster.xyz/ (See SDK → Back navigation)
 
 #### **Open External URLs**
 ```typescript
@@ -286,11 +302,21 @@ sdk.actions.close();
 sdk.actions.openUrl('https://example.com');
 ```
 
+📖 Docs: https://miniapps.farcaster.xyz/ (See SDK → Actions)
+
 #### **Add to Home Screen Prompt**
 ```typescript
 // Prompt user to add your app to home screen
 sdk.actions.addFrame();
 ```
+
+#### **Quick Auth (Fast User Authentication)**
+```typescript
+// Use Quick Auth for faster authentication flow
+// This provides a streamlined way to authenticate users
+```
+
+📖 Docs: https://miniapps.farcaster.xyz/ (See SDK → Quick Auth and SDK → Actions)
 
 ---
 
@@ -331,6 +357,8 @@ sdk.context                       // Promise<Context>
 sdk.wallet.ethProvider           // Ethereum wallet provider
 ```
 
+📖 Docs: https://miniapps.farcaster.xyz/ (See Reference section and SDK → Detecting chains & capabilities)
+
 ---
 
 ### 5. Testing Your Mini App
@@ -355,7 +383,7 @@ sdk.wallet.ethProvider           // Ethereum wallet provider
    - Ensure your icon and splash images are accessible
    - Test that `sdk.context` returns user information
 
-📖 Full documentation: https://miniapps.farcaster.xyz/
+📖 Docs: https://miniapps.farcaster.xyz/ (See Introduction → Getting Started and Guides → Loading your app)
 
 ---
 
@@ -378,7 +406,25 @@ Once everything works locally:
    - Users can add it to their home screens
    - It appears in the Mini App directory
 
-📖 More details: https://miniapps.farcaster.xyz/
+📖 Docs: https://miniapps.farcaster.xyz/ (See Guides → Publishing your app, App Discovery & Search, and Sending notifications)
+
+---
+
+## Advanced Topics (Optional)
+
+### Universal Links
+Set up universal links to make your app open directly from web links.
+
+### Share Extensions
+Allow users to share content to your Mini App from other apps.
+
+### Domain Migration
+Moving your Mini App to a new domain? Follow the migration guide.
+
+### Solana Wallet Support
+Need Solana instead of or in addition to Ethereum?
+
+📖 Docs: https://miniapps.farcaster.xyz/ (See Guides → Universal Links, Share Extensions, Domain migration, and Interacting with Solana wallets)
 
 ---
 
@@ -449,10 +495,22 @@ Vercel is the easiest way to deploy Next.js apps:
 
 ## Helpful Resources
 
-- 📘 **Official Documentation:** https://miniapps.farcaster.xyz/
-- 📦 **NPM Package:** https://www.npmjs.com/package/@farcaster/frame-sdk
-- 💬 **Developer Community:** Join the fc-devs channel on Warpcast
-- 🐙 **GitHub Examples:** Search for "farcaster mini app" examples on GitHub
+### 📚 Official Documentation
+- **Main Documentation:** https://miniapps.farcaster.xyz/
+  - Navigate using the sidebar menu to access:
+  - **Introduction** → Why Mini Apps?, Getting Started
+  - **Guides** → Loading your app, Sharing your app, Ethereum/Solana wallets, Publishing, etc.
+  - **SDK** → Context, Actions, Events, Haptics, Wallets, and more
+  - **Reference** → Full API reference
+  - **FAQ** → Common questions answered
+  - **Examples** → Working example apps
+  - **Blog** → Latest updates
+  - **llms.txt** → AI guidelines
+
+### 🛠️ Development Tools
+- **NPM Package:** https://www.npmjs.com/package/@farcaster/frame-sdk
+- **GitHub:** https://github.com/farcasterxyz/
+- **Developer Community:** Join the fc-devs channel on Warpcast
 
 ---
 
@@ -493,10 +551,10 @@ Vercel is the easiest way to deploy Next.js apps:
 
 ## Need Help?
 
-- 📖 **Main Documentation:** https://miniapps.farcaster.xyz/
-- 🔍 **Search the docs** for specific features and APIs
-- 💬 **Ask the community** in Warpcast's fc-devs channel
-- 🐛 **Check GitHub Issues** for the frame-sdk repository
+- 📖 **Documentation:** https://miniapps.farcaster.xyz/ (Check FAQ section for common questions)
+- 💬 **Community:** Ask in Warpcast's fc-devs channel
+- 🐛 **GitHub:** https://github.com/farcasterxyz/
+- 📦 **NPM:** https://www.npmjs.com/package/@farcaster/frame-sdk
 
 ---
 
